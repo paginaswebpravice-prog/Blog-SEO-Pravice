@@ -1,0 +1,189 @@
+/* ================= CONTAINER ================= */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  line-height: 1.8;
+
+  background: #f9fafb;
+  color: #1e293b;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #1e3a5f, #0f172a);
+  color: #f9fafb;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #eab308;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.reading {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f9fafb;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.2);
+}
+
+.heroTitle {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.heroDescription {
+  font-size: 16px;
+  color: #e2e8f0;
+  max-width: 600px;
+}
+
+/* ================= TITLES ================= */
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #1e3a5f;
+  position: relative;
+}
+
+.subheading {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #0f172a;
+}
+
+/* Línea decorativa PRO */
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #eab308;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* ================= TEXT ================= */
+
+.text {
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+/* ================= LIST ================= */
+
+.list {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.list li {
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+/* Marcadores con acento */
+.list li::marker {
+  color: #eab308;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  margin-top: 60px;
+  padding: 50px 20px;
+  border-radius: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.ctaText {
+  margin-bottom: 25px;
+  color: #64748b;
+}
+
+/* ================= ACTIONS ================= */
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.primary {
+  background: #1e3a5f;
+  color: #f9fafb;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.primary:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+/* BOTÓN SECUNDARIO */
+
+.secondary {
+  background: #eab308;
+  color: #0f172a;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.secondary:hover {
+  background: #ca8a04;
+  transform: translateY(-1px);
+}
