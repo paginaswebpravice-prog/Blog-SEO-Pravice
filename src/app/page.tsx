@@ -75,34 +75,49 @@ const articles = [
 ];
 
 export default function Home() {
+  const featured = articles[0];
+  const rest = articles.slice(1);
+
   return (
     <main className={styles.container}>
       {/* HERO */}
       <section className={styles.hero}>
-        <h1 className={styles.title}>
-          Blog legal en Colombia: guías y asesoría jurídica
-        </h1>
+        <h1 className={styles.title}>Blog legal en Colombia</h1>
         <p className={styles.subtitle}>
-          Encuentra información sobre abogados en Bogotá, derecho comercial,
-          cobro de cartera y más temas legales en Colombia.
+          Guías prácticas sobre derecho, empresas y asesoría jurídica.
         </p>
       </section>
 
-      {/* GRID */}
-      <section className={styles.grid}>
-        {articles.map((article, index) => (
-          <Link key={index} href={article.href} className={styles.card}>
-            <div className={styles.meta}>
-              <span className={styles.category}>{article.category}</span>
-              <span className={styles.reading}>{article.readingTime}</span>
-            </div>
+      {/* FEATURED */}
+      <section className={styles.featured}>
+        <Link href={featured.href} className={styles.featuredLink}>
+          <span className={styles.category}>{featured.category}</span>
 
-            <h2 className={styles.cardTitle}>{article.title}</h2>
-            <p className={styles.cardText}>{article.description}</p>
+          <h2 className={styles.featuredTitle}>{featured.title}</h2>
 
-            <span className={styles.link}>Leer más →</span>
-          </Link>
-        ))}
+          <p className={styles.featuredText}>{featured.description}</p>
+
+          <div className={styles.meta}>
+            <span>{featured.readingTime}</span>
+          </div>
+        </Link>
+      </section>
+
+      {/* LISTA COMPLETA */}
+      <section className={styles.wrapper}>
+        <div className={styles.list}>
+          {rest.map((article, index) => (
+            <Link key={index} href={article.href} className={styles.item}>
+              <div className={styles.itemTop}>
+                <span className={styles.category}>{article.category}</span>
+                <span className={styles.reading}>{article.readingTime}</span>
+              </div>
+
+              <h3 className={styles.itemTitle}>{article.title}</h3>
+              <p className={styles.itemText}>{article.description}</p>
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
