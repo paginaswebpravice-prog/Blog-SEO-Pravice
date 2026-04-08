@@ -48,7 +48,7 @@ export default function RootLayout({
 
             <nav className="links">
               <Link href="/">Inicio</Link>
-              <Link href="/blog">Blog</Link>
+              <Link href="/">Blog</Link>
             </nav>
           </div>
         </header>

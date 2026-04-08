@@ -1,18 +1,13 @@
-/* ================= WRAPPER ================= */
-
-.wrapper {
-  background: #f1f5f9; /* gris suave */
-  padding: 30px;
-  border-radius: 16px;
-}
-
 /* ================= CONTAINER ================= */
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 80px 20px;
-  background: #f9fafb;
+
+  /* fondo general suave */
+  background: #f8fafc;
+  border-radius: 20px;
 }
 
 /* ================= HERO ================= */
@@ -30,6 +25,7 @@
 
 .subtitle {
   color: #64748b;
+  font-size: 16px;
 }
 
 /* ================= FEATURED ================= */
@@ -41,6 +37,21 @@
 .featuredLink {
   display: block;
   text-decoration: none;
+
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+
+  transition: all 0.2s ease;
+}
+
+.featuredLink:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5f5;
 }
 
 .featuredTitle {
@@ -57,7 +68,19 @@
 
 .meta {
   font-size: 13px;
-  color: #64748b;
+  color: #94a3b8;
+}
+
+/* ================= WRAPPER ================= */
+
+.wrapper {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
 }
 
 /* ================= LIST ================= */
@@ -65,23 +88,27 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 /* ================= ITEM ================= */
 
 .item {
-  background: #ffffff;
+  background: #f9fafb;
   padding: 18px;
-  border-radius: 10px;
+  border-radius: 12px;
+
   border: 1px solid #e2e8f0;
+
   text-decoration: none;
+
   transition: all 0.2s ease;
 }
 
 .item:hover {
-  transform: translateY(-3px);
-  border-color: #1e3a5f;
+  transform: translateY(-2px);
+  border-color: #cbd5f5;
+  background: #ffffff;
 }
 
 /* ================= ITEM CONTENT ================= */
@@ -89,14 +116,14 @@
 .itemTop {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .itemTitle {
   font-size: 20px;
   font-weight: 600;
-  color: #1e3a5f;
-  margin-bottom: 5px;
+  color: #1e293b;
+  margin-bottom: 6px;
 }
 
 .itemText {
@@ -108,13 +135,15 @@
 
 .category {
   font-size: 12px;
-  background: #eab308;
-  color: #0f172a;
+
+  background: #fef3c7;
+  color: #92400e;
+
   padding: 4px 10px;
   border-radius: 999px;
 }
 
 .reading {
   font-size: 12px;
-  color: #64748b;
+  color: #c4911a;
 }

@@ -128,11 +128,6 @@ a {
 }
 
 /* Títulos globales */
-h1,
-h2,
-h3 {
-  color: var(--title);
-}
 
 /* Selección de texto (detalle pro) */
 ::selection {
