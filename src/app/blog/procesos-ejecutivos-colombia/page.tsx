@@ -1,10 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import styles from "../../Blog.module.css";
 
 export default function ProcesosEjecutivosPage() {
   return (
     <>
+      {/* ================= BACK ================= */}
+      <div className={styles.backWrapper}>
+        <Link href="/" className={styles.back}>
+          <span className={styles.arrow}>←</span>
+          Volver al blog
+        </Link>
+      </div>
       {/* ================= HERO ================= */}
       <section className={styles.hero}>
         <div className={styles.badges}>

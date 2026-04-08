@@ -1,3 +1,53 @@
+/* ================= BACK ================= */
+
+.backWrapper {
+  max-width: 900px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+
+/* BOTÓN */
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #1e3a5f;
+
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+/* ICONO */
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+/* HOVER */
+
+.back:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+
+  transform: translateY(-1px);
+}
+
+.back:hover .arrow {
+  transform: translateX(-3px);
+}
+
 /* ================= CONTAINER ================= */
 
 .container {
