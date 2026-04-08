@@ -1,14 +1,26 @@
+/* ================= ROOT ================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb;
+  --foreground: #1e293b;
+
+  --title: #0f172a;
+  --primary: #1e3a5f;
+  --accent: #eab308;
+
+  --gray: #64748b;
+  --border: #e2e8f0;
 }
 
+/* DARK MODE (opcional) */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
+
+/* ================= BASE ================= */
 
 html {
   height: 100%;
@@ -24,12 +36,17 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* RESET */
 
 * {
   box-sizing: border-box;
@@ -41,6 +58,89 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* ================= HEADER ================= */
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  font-size: 14px;
+  color: var(--gray);
+  transition: 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--primary);
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  flex: 1;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray);
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+/* ================= UTILIDADES ================= */
+
+/* Contenedor reutilizable */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Títulos globales */
+h1,
+h2,
+h3 {
+  color: var(--title);
+}
+
+/* Selección de texto (detalle pro) */
+::selection {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ================= DARK MODE HTML ================= */
 
 @media (prefers-color-scheme: dark) {
   html {
