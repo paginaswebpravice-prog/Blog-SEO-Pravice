@@ -11,8 +11,8 @@ export default function CrearEmpresaPage() {
           Volver al blog
         </Link>
       </div>
+      {/* HERO */}
       <main className={styles.container}>
-        {/* HERO */}
         <section className={styles.hero}>
           <div className={styles.badges}>
             <span className={styles.badge}>Emprendimiento</span>
