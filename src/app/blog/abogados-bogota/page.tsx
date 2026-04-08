@@ -137,7 +137,7 @@ export default function AbogadosBogotaPage() {
             </p>
 
             <div className={styles.actions}>
-              <a href="/" className={styles.primary}>
+              <a href="https://pravice.co/" className={styles.primary}>
                 Ver firma de abogados
               </a>
 
