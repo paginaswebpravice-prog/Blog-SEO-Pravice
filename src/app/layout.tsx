@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     default: "Guía Legal Colombia",
     template: "%s | Guía Legal Colombia",
   },
+  other: {
+    "google-site-verification": "Sjvr4v7EGRfdGd1hqq8XTBMdqvhfUlmZSvvsfo5lKmo",
+  },
+
   description:
     "Blog legal en Colombia con guías sobre abogados, derecho comercial, conciliación, cobro de cartera y creación de empresas.",
   metadataBase: new URL("https://guialegalcolombia.vercel.app"),
