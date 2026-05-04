@@ -72,6 +72,163 @@ const articles = [
     category: "Legal",
     readingTime: "5 min",
   },
+  {
+    title: "Abogado para cobro de cartera en Bogotá: cuándo contratar uno",
+    description:
+      "Descubre en qué casos necesitas un abogado para recuperar deudas en Bogotá.",
+    href: "/blog/abogado-cobro-cartera-bogota",
+    category: "Finanzas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Servicios legales para empresas en Colombia: qué incluyen",
+    description:
+      "Conoce qué servicios jurídicos necesita una empresa para operar legalmente.",
+    href: "/blog/servicios-legales-empresas-colombia",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Abogados corporativos en Bogotá: funciones y beneficios",
+    description:
+      "Por qué tu empresa necesita un abogado corporativo en Bogotá.",
+    href: "/blog/abogados-corporativos-bogota",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Cuánto cuesta un abogado en Colombia: tarifas y honorarios",
+    description: "Guía sobre precios de servicios legales en Colombia.",
+    href: "/blog/cuanto-cuesta-abogado-colombia",
+    category: "Guía Legal",
+    readingTime: "6 min",
+  },
+  {
+    title: "Demanda por incumplimiento de contrato en Colombia",
+    description: "Qué hacer cuando una empresa o persona incumple un contrato.",
+    href: "/blog/demanda-incumplimiento-contrato",
+    category: "Legal",
+    readingTime: "6 min",
+  },
+  {
+    title: "Tipos de contratos en Colombia y para qué sirve cada uno",
+    description:
+      "Conoce los diferentes contratos legales y cuándo utilizarlos.",
+    href: "/blog/tipos-contratos-colombia",
+    category: "Legal",
+    readingTime: "6 min",
+  },
+  {
+    title: "Qué hacer si no te pagan una deuda en Colombia",
+    description: "Opciones legales para recuperar dinero de clientes morosos.",
+    href: "/blog/no-me-pagan-deuda-colombia",
+    category: "Finanzas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Cómo demandar a una empresa en Colombia paso a paso",
+    description:
+      "Guía completa para iniciar acciones legales contra una empresa.",
+    href: "/blog/como-demandar-empresa-colombia",
+    category: "Legal",
+    readingTime: "6 min",
+  },
+  {
+    title: "Derecho laboral en Colombia: derechos y obligaciones",
+    description:
+      "Todo lo que debes saber sobre relaciones laborales en Colombia.",
+    href: "/blog/derecho-laboral-colombia",
+    category: "Legal",
+    readingTime: "6 min",
+  },
+  {
+    title: "Qué es una SAS en Colombia y cómo funciona",
+    description:
+      "Explicación completa del tipo de empresa más común en Colombia.",
+    href: "/blog/sas-colombia",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Errores legales que cometen las empresas en Colombia",
+    description:
+      "Evita los errores más comunes que afectan legalmente a las empresas.",
+    href: "/blog/errores-legales-empresas",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Cómo proteger legalmente tu negocio en Colombia",
+    description: "Estrategias legales para evitar riesgos empresariales.",
+    href: "/blog/proteger-negocio-colombia",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Qué hace un abogado y cuándo necesitas uno",
+    description:
+      "Funciones de un abogado y situaciones en las que debes contratarlo.",
+    href: "/blog/cuando-necesitas-abogado",
+    category: "Guía Legal",
+    readingTime: "4 min",
+  },
+  {
+    title: "Diferencia entre abogado litigante y asesor jurídico",
+    description: "Conoce las diferencias clave entre estos profesionales.",
+    href: "/blog/abogado-litigante-vs-asesor",
+    category: "Guía Legal",
+    readingTime: "4 min",
+  },
+  {
+    title: "Cómo hacer un contrato en Colombia paso a paso",
+    description: "Aprende a redactar contratos básicos de forma correcta.",
+    href: "/blog/como-hacer-contrato-colombia",
+    category: "Legal",
+    readingTime: "5 min",
+  },
+  {
+    title: "Qué pasa si incumplo un contrato en Colombia",
+    description: "Consecuencias legales del incumplimiento contractual.",
+    href: "/blog/incumplimiento-contrato-consecuencias",
+    category: "Legal",
+    readingTime: "5 min",
+  },
+  {
+    title: "Cobranza prejurídica en Colombia: qué es y cómo funciona",
+    description:
+      "Antes de demandar, conoce esta etapa clave de recuperación de cartera.",
+    href: "/blog/cobranza-prejuridica-colombia",
+    category: "Finanzas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Qué es un título ejecutivo en Colombia",
+    description: "Documento clave para iniciar procesos de cobro judicial.",
+    href: "/blog/titulo-ejecutivo-colombia",
+    category: "Legal",
+    readingTime: "4 min",
+  },
+  {
+    title: "Cuándo una deuda prescribe en Colombia",
+    description: "Conoce los tiempos legales de prescripción de deudas.",
+    href: "/blog/prescripcion-deudas-colombia",
+    category: "Finanzas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Cómo evitar problemas legales en tu empresa",
+    description: "Buenas prácticas jurídicas para empresarios.",
+    href: "/blog/evitar-problemas-legales-empresa",
+    category: "Empresas",
+    readingTime: "5 min",
+  },
+  {
+    title: "Ventajas de contratar asesoría legal permanente",
+    description: "Por qué tener un abogado fijo puede ahorrarte dinero.",
+    href: "/blog/asesoria-legal-permanente",
+    category: "Empresas",
+    readingTime: "4 min",
+  },
 ];
 
 export default function Home() {
