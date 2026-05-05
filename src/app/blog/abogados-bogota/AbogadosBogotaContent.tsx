@@ -2,21 +2,32 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function AbogadosBogotaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Derecho / Guía</span>
             <span className={styles.reading}>5 min lectura</span>
@@ -30,10 +41,14 @@ export default function AbogadosBogotaContent() {
             Conoce las funciones, especialidades y cómo elegir abogados en
             Bogotá Colombia.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             Los abogados en Bogotá Colombia cumplen un papel fundamental en la
             sociedad, ya que garantizan la correcta aplicación de la ley y la
@@ -122,10 +137,15 @@ export default function AbogadosBogotaContent() {
             Si estás explorando alternativas, puedes conocer una firma de
             abogados en Bogotá a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma de abogados en Bogotá
@@ -152,7 +172,7 @@ export default function AbogadosBogotaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

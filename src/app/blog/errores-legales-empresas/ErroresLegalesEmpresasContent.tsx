@@ -1,111 +1,210 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function ErroresLegalesEmpresasContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.badges}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.div
+            className={styles.badges}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             <span className={styles.badge}>Empresas</span>
             <span className={styles.reading}>5 min lectura</span>
-          </div>
+          </motion.div>
 
-          <h1 className={styles.heroTitle}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             Errores legales que cometen las empresas en Colombia
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription}>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.6 }}
+          >
             Evita los errores más comunes que pueden generar sanciones, pérdidas
             económicas y conflictos legales en tu empresa.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
-          <p className={styles.text}>
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Muchas empresas en Colombia enfrentan problemas legales que podrían
             haberse evitado con una adecuada asesoría jurídica. Desde errores en
             contratos hasta incumplimientos laborales, estos fallos pueden
             generar sanciones, demandas y pérdidas económicas importantes.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             En ciudades como Bogotá, donde la competencia empresarial es alta,
             cumplir con la normativa legal no solo es obligatorio, sino una
             ventaja estratégica.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             ¿Por qué ocurren los errores legales en las empresas?
-          </h2>
+          </motion.h2>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Los errores legales suelen surgir por desconocimiento de la ley,
             falta de asesoría o decisiones tomadas sin análisis jurídico previo.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Muchas empresas buscan reducir costos evitando contratar abogados,
             pero esto puede resultar mucho más costoso a largo plazo.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             Errores legales más comunes en empresas en Colombia
-          </h2>
+          </motion.h2>
 
-          <h3 className={styles.subheading}>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             1. No formalizar la empresa correctamente
-          </h3>
+          </motion.h3>
           <p className={styles.text}>
             Operar sin registro o con errores en la constitución puede generar
             sanciones y limitar el crecimiento del negocio.
           </p>
 
-          <h3 className={styles.subheading}>2. Contratos mal redactados</h3>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            2. Contratos mal redactados
+          </motion.h3>
           <p className={styles.text}>
             Utilizar contratos genéricos o mal estructurados puede provocar
             conflictos y dificultar la defensa legal en caso de incumplimiento.
           </p>
 
-          <h3 className={styles.subheading}>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             3. Incumplimiento de normas laborales
-          </h3>
+          </motion.h3>
           <p className={styles.text}>
             No pagar prestaciones, no afiliar a seguridad social o incumplir la
             jornada laboral puede generar demandas laborales.
           </p>
 
-          <h3 className={styles.subheading}>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             4. No gestionar adecuadamente el cobro de cartera
-          </h3>
+          </motion.h3>
           <p className={styles.text}>
             La falta de control en el cobro de deudas afecta el flujo de caja y
             puede llevar a problemas financieros graves.
           </p>
 
-          <h3 className={styles.subheading}>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             5. No cumplir obligaciones tributarias
-          </h3>
+          </motion.h3>
           <p className={styles.text}>
             Errores en impuestos o incumplimientos ante la DIAN pueden generar
             multas y sanciones económicas.
           </p>
 
-          <h3 className={styles.subheading}>
+          <motion.h3
+            className={styles.subheading}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             6. Falta de asesoría legal preventiva
-          </h3>
+          </motion.h3>
           <p className={styles.text}>
             Muchas empresas solo buscan ayuda legal cuando ya existe un
             problema, lo que reduce las posibilidades de solución favorable.
@@ -169,10 +268,16 @@ export default function ErroresLegalesEmpresasContent() {
             Si estás evaluando opciones, puedes conocer una firma a
             continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Protege tu empresa con asesoría legal
@@ -198,7 +303,7 @@ export default function ErroresLegalesEmpresasContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

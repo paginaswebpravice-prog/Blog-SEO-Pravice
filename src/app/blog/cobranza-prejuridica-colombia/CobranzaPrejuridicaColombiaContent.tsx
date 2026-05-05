@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function CobranzaPrejuridicaColombiaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Finanzas</span>
             <span className={styles.reading}>5 min lectura</span>
@@ -30,10 +41,15 @@ export default function CobranzaPrejuridicaColombiaContent() {
             Descubre cómo recuperar deudas en Colombia sin necesidad de iniciar
             un proceso judicial.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <p className={styles.text}>
             La cobranza prejurídica en Colombia es una etapa clave dentro del
             proceso de recuperación de cartera. Se trata de todas las acciones
@@ -146,10 +162,16 @@ export default function CobranzaPrejuridicaColombiaContent() {
             Si estás evaluando opciones, puedes conocer una alternativa a
             continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Recupera tu cartera sin procesos judiciales
@@ -175,7 +197,7 @@ export default function CobranzaPrejuridicaColombiaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

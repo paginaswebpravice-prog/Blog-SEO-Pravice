@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/dist/client/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function CobroCarteraContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Finanzas</span>
             <span className={styles.reading}>5 min lectura</span>
@@ -30,10 +41,15 @@ export default function CobroCarteraContent() {
             Descubre estrategias legales efectivas para recuperar cartera en
             Colombia y proteger tus finanzas.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <p className={styles.text}>
             El cobro de cartera en Colombia es un proceso fundamental para
             empresas y personas que necesitan recuperar dinero adeudado. En un
@@ -152,10 +168,16 @@ export default function CobroCarteraContent() {
             Si estás buscando alternativas, puedes conocer una firma que ofrece
             este tipo de servicios a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma especializada en cobro de cartera
@@ -181,7 +203,7 @@ export default function CobroCarteraContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/dist/client/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function ConstitucionEmpresasContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* HERO */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Emprendimiento</span>
             <span className={styles.reading}>6 min lectura</span>
@@ -31,10 +42,14 @@ export default function ConstitucionEmpresasContent() {
             requisitos, costos y pasos clave para formalizar tu negocio en
             Bogotá y el resto del país.
           </p>
-        </section>
+        </motion.section>
 
         {/* CONTENIDO */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             La constitución de empresas en Colombia es un proceso fundamental
             para cualquier emprendedor que quiera operar de manera legal y
@@ -159,10 +174,15 @@ export default function ConstitucionEmpresasContent() {
             Si estás evaluando opciones, es recomendable considerar equipos con
             experiencia en derecho comercial y creación de empresas en Colombia.
           </p>
-        </section>
+        </motion.section>
 
         {/* CTA */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma que te puede ayudar a crear tu empresa
@@ -189,7 +209,7 @@ export default function ConstitucionEmpresasContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* SCHEMA */}
         <script

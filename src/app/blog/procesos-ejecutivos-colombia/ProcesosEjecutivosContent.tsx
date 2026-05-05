@@ -2,38 +2,68 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function ProcesosEjecutivosContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.badges}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className={styles.badges}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <span className={styles.badge}>Legal</span>
             <span className={styles.reading}>5 min lectura</span>
-          </div>
+          </motion.div>
 
-          <h1 className={styles.heroTitle}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
             Procesos ejecutivos en Colombia: qué son y cómo funcionan
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription}>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Todo sobre los procesos ejecutivos en Colombia y cómo utilizarlos
             para exigir el pago de obligaciones legales.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             Los procesos ejecutivos en Colombia son mecanismos legales diseñados
             para exigir el cumplimiento de obligaciones claras, expresas y
@@ -164,10 +194,16 @@ export default function ProcesosEjecutivosContent() {
             Si estás evaluando alternativas, puedes conocer una firma que ofrece
             este tipo de servicios a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma especializada en procesos ejecutivos
@@ -193,7 +229,7 @@ export default function ProcesosEjecutivosContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

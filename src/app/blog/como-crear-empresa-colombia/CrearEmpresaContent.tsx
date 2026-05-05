@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/dist/client/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function CrearEmpresaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* HERO */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Emprendimiento</span>
             <span className={styles.reading}>6 min lectura</span>
@@ -31,10 +42,15 @@ export default function CrearEmpresaContent() {
             la idea inicial hasta su formalización legal en Bogotá y el resto
             del país.
           </p>
-        </section>
+        </motion.section>
 
         {/* CONTENIDO */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <p className={styles.text}>
             Crear una empresa en Colombia es una de las decisiones más
             importantes para cualquier emprendedor. Más allá de tener una buena
@@ -158,10 +174,16 @@ export default function CrearEmpresaContent() {
             Sin embargo, también implica cumplir con normativas específicas y
             procesos que pueden ser más exigentes que en otras regiones.
           </p>
-        </section>
+        </motion.section>
 
         {/* CTA */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               ¿Buscas ayuda para crear tu empresa en Colombia?
@@ -188,7 +210,7 @@ export default function CrearEmpresaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* SCHEMA */}
         <script

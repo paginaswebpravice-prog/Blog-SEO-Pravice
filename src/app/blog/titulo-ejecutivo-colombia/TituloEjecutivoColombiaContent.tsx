@@ -2,39 +2,69 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function TituloEjecutivoColombiaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.badges}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className={styles.badges}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <span className={styles.badge}>Legal</span>
             <span className={styles.reading}>4 min lectura</span>
-          </div>
+          </motion.div>
 
-          <h1 className={styles.heroTitle}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
             Qué es un título ejecutivo en Colombia y para qué sirve
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription}>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Conoce qué es un título ejecutivo, qué documentos tienen esta
             calidad y cómo se utilizan en procesos de cobro judicial en
             Colombia.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             El título ejecutivo en Colombia es un documento que contiene una
             obligación clara, expresa y exigible, lo que permite iniciar un
@@ -164,10 +194,16 @@ export default function TituloEjecutivoColombiaContent() {
             Si estás evaluando opciones, puedes conocer una firma especializada
             a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma especializada en cobro jurídico
@@ -193,7 +229,7 @@ export default function TituloEjecutivoColombiaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

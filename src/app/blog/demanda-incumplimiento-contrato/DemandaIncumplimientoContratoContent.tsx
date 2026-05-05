@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function DemandaIncumplimientoContratoContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Legal</span>
             <span className={styles.reading}>6 min lectura</span>
@@ -30,10 +41,15 @@ export default function DemandaIncumplimientoContratoContent() {
             Qué hacer cuando una persona o empresa incumple un contrato y cómo
             iniciar una demanda en Colombia.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className={styles.text}>
             El incumplimiento de contrato en Colombia es una situación común en
             relaciones comerciales y personales. Cuando una de las partes no
@@ -156,10 +172,16 @@ export default function DemandaIncumplimientoContratoContent() {
             Si estás evaluando opciones, puedes conocer una firma a
             continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Recibe asesoría para demandas por incumplimiento de contrato
@@ -185,7 +207,7 @@ export default function DemandaIncumplimientoContratoContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

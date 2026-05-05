@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function CuandoNecesitasAbogadoContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Guía Legal</span>
             <span className={styles.reading}>4 min lectura</span>
@@ -30,22 +41,36 @@ export default function CuandoNecesitasAbogadoContent() {
             Descubre en qué situaciones es recomendable contratar un abogado y
             cómo puede ayudarte a proteger tus derechos.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
-          <p className={styles.text}>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Un abogado es un profesional del derecho encargado de asesorar,
             representar y defender los intereses de personas y empresas en
             asuntos legales. En Colombia, contar con asesoría jurídica adecuada
             puede evitar problemas legales y proteger tus derechos.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             Muchas personas solo buscan un abogado cuando tienen un problema,
             pero lo ideal es contar con asesoría preventiva para evitar riesgos
             desde el inicio.
-          </p>
+          </motion.p>
 
           <h2 className={styles.subtitle}>¿Qué hace un abogado?</h2>
 
@@ -137,10 +162,15 @@ export default function CuandoNecesitasAbogadoContent() {
             Si estás evaluando alternativas, puedes conocer una firma de
             abogados a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Encuentra asesoría legal confiable en Colombia
@@ -166,7 +196,7 @@ export default function CuandoNecesitasAbogadoContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

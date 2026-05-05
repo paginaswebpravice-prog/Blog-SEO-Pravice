@@ -2,38 +2,68 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function ProtegerNegocioColombiaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.badges}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className={styles.badges}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <span className={styles.badge}>Empresas</span>
             <span className={styles.reading}>5 min lectura</span>
-          </div>
+          </motion.div>
 
-          <h1 className={styles.heroTitle}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
             Cómo proteger legalmente tu negocio en Colombia
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription}>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Descubre las principales estrategias legales para proteger tu
             empresa en Colombia y evitar riesgos jurídicos.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             Proteger legalmente un negocio en Colombia es una de las decisiones
             más importantes para cualquier empresario. No solo se trata de
@@ -150,10 +180,16 @@ export default function ProtegerNegocioColombiaContent() {
             Si estás evaluando opciones, puedes conocer una firma que ofrece
             este tipo de servicios a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Protege tu negocio con asesoría legal especializada
@@ -179,7 +215,7 @@ export default function ProtegerNegocioColombiaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

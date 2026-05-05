@@ -2,21 +2,32 @@
 
 import Link from "next/dist/client/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function AsesoriaJuridicaEmpresasContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Empresas</span>
             <span className={styles.reading}>4 min lectura</span>
@@ -30,10 +41,14 @@ export default function AsesoriaJuridicaEmpresasContent() {
             La importancia de contar con respaldo legal para proteger tu empresa
             y tomar decisiones seguras en Colombia.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             La asesoría jurídica para empresas en Colombia es un elemento
             fundamental para garantizar el correcto funcionamiento de cualquier
@@ -155,10 +170,15 @@ export default function AsesoriaJuridicaEmpresasContent() {
             Si estás explorando alternativas, puedes conocer una firma de
             abogados que ofrece este tipo de servicios a continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Conoce una firma de abogados para empresas en Colombia
@@ -184,7 +204,7 @@ export default function AsesoriaJuridicaEmpresasContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

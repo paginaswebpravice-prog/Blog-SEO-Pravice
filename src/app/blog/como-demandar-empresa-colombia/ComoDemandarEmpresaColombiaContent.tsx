@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function ComoDemandarEmpresaColombiaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Legal</span>
             <span className={styles.reading}>6 min lectura</span>
@@ -30,10 +41,14 @@ export default function ComoDemandarEmpresaColombiaContent() {
             Conoce los pasos legales para demandar a una empresa en Colombia y
             qué debes tener en cuenta antes de iniciar el proceso.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             Demandar a una empresa en Colombia es un proceso legal que permite a
             una persona o entidad exigir el cumplimiento de sus derechos cuando
@@ -153,10 +168,15 @@ export default function ComoDemandarEmpresaColombiaContent() {
             Si estás evaluando opciones, puedes conocer una firma a
             continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               ¿Necesitas demandar a una empresa en Colombia?
@@ -182,7 +202,7 @@ export default function ComoDemandarEmpresaColombiaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

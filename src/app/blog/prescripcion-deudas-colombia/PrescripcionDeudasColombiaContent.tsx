@@ -2,38 +2,68 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function PrescripcionDeudasColombiaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
-          <div className={styles.badges}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className={styles.badges}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <span className={styles.badge}>Finanzas</span>
             <span className={styles.reading}>5 min lectura</span>
-          </div>
+          </motion.div>
 
-          <h1 className={styles.heroTitle}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+          >
             Cuándo prescribe una deuda en Colombia
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription}>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             Conoce los plazos legales y qué significa que una deuda deje de ser
             exigible según la ley colombiana.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             La prescripción de deudas en Colombia es un concepto legal que
             indica el momento en el cual una obligación deja de ser exigible
@@ -151,10 +181,16 @@ export default function PrescripcionDeudasColombiaContent() {
             Si estás evaluando opciones, puedes conocer una firma a
             continuación.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               Protege tus derechos frente a deudas
@@ -180,7 +216,7 @@ export default function PrescripcionDeudasColombiaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

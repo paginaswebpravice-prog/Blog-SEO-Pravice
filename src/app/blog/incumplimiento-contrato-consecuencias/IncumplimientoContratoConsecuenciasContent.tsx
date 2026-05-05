@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "../../Blog.module.css";
 
 export default function IncumplimientoContratoConsecuenciasContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Legal</span>
             <span className={styles.reading}>5 min lectura</span>
@@ -30,128 +41,236 @@ export default function IncumplimientoContratoConsecuenciasContent() {
             Conoce las consecuencias legales del incumplimiento de contrato y
             qué acciones pueden tomar las partes afectadas.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
-          <p className={styles.text}>
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             El incumplimiento de un contrato en Colombia puede generar
             consecuencias legales importantes tanto para personas como para
             empresas. Cuando una de las partes no cumple con lo acordado, se
             activa la responsabilidad contractual, lo que puede derivar en
             sanciones, indemnizaciones y procesos judiciales.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             En entornos empresariales como Bogotá, donde los contratos son la
             base de las relaciones comerciales, cumplir con las obligaciones es
             fundamental para evitar conflictos legales.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             ¿Qué es el incumplimiento de contrato?
-          </h2>
+          </motion.h2>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Se produce cuando una de las partes no cumple total o parcialmente
             con las obligaciones pactadas en un contrato.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Este incumplimiento puede ser por falta de pago, retrasos, entrega
             incompleta o cualquier violación de lo acordado.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Consecuencias legales del incumplimiento
-          </h2>
+          </motion.h2>
 
-          <h3 className={styles.subheading}>1. Indemnización de perjuicios</h3>
-          <p className={styles.text}>
-            La parte afectada puede exigir una compensación económica por los
-            daños causados.
-          </p>
+          {[
+            {
+              title: "1. Indemnización de perjuicios",
+              text: "La parte afectada puede exigir una compensación económica por los daños causados.",
+            },
+            {
+              title: "2. Resolución del contrato",
+              text: "El contrato puede darse por terminado si el incumplimiento es grave.",
+            },
+            {
+              title: "3. Ejecución del contrato",
+              text: "En algunos casos, se puede exigir judicialmente el cumplimiento de la obligación.",
+            },
+            {
+              title: "4. Procesos judiciales",
+              text: "El incumplimiento puede dar lugar a demandas civiles o procesos ejecutivos.",
+            },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+            >
+              <h3 className={styles.subheading}>{item.title}</h3>
+              <p className={styles.text}>{item.text}</p>
+            </motion.div>
+          ))}
 
-          <h3 className={styles.subheading}>2. Resolución del contrato</h3>
-          <p className={styles.text}>
-            El contrato puede darse por terminado si el incumplimiento es grave.
-          </p>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Tipos de incumplimiento
+          </motion.h2>
 
-          <h3 className={styles.subheading}>3. Ejecución del contrato</h3>
-          <p className={styles.text}>
-            En algunos casos, se puede exigir judicialmente el cumplimiento de
-            la obligación.
-          </p>
-
-          <h3 className={styles.subheading}>4. Procesos judiciales</h3>
-          <p className={styles.text}>
-            El incumplimiento puede dar lugar a demandas civiles o procesos
-            ejecutivos.
-          </p>
-
-          <h2 className={styles.subtitle}>Tipos de incumplimiento</h2>
-
-          <ul className={styles.list}>
+          <motion.ul
+            className={styles.list}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <li>Incumplimiento total</li>
             <li>Incumplimiento parcial</li>
             <li>Incumplimiento tardío</li>
             <li>Cumplimiento defectuoso</li>
-          </ul>
+          </motion.ul>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Cada tipo de incumplimiento puede tener consecuencias diferentes
             dependiendo del caso.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             ¿Qué hacer ante un incumplimiento?
-          </h2>
+          </motion.h2>
 
-          <ul className={styles.list}>
+          <motion.ul
+            className={styles.list}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <li>Revisar el contrato firmado</li>
             <li>Intentar una conciliación</li>
             <li>Enviar requerimientos formales</li>
             <li>Buscar asesoría legal</li>
             <li>Iniciar acciones judiciales si es necesario</li>
-          </ul>
+          </motion.ul>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Actuar rápidamente puede evitar mayores pérdidas y facilitar la
             solución del conflicto.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Importancia de los contratos bien redactados
-          </h2>
+          </motion.h2>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Un contrato claro y bien estructurado facilita la solución de
             conflictos y protege a las partes en caso de incumplimiento.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Por esta razón, es fundamental contar con asesoría legal al momento
             de redactar o firmar acuerdos.
-          </p>
+          </motion.p>
 
-          <h2 className={styles.subtitle}>
+          <motion.h2
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             ¿Dónde encontrar asesoría legal en Colombia?
-          </h2>
+          </motion.h2>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Existen firmas legales especializadas en derecho civil y comercial
             que pueden ayudarte a manejar situaciones de incumplimiento
             contractual.
-          </p>
+          </motion.p>
 
-          <p className={styles.text}>
+          <motion.p
+            className={styles.text}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             Si estás evaluando opciones, puedes conocer una firma a
             continuación.
-          </p>
-        </section>
+          </motion.p>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               ¿Tienes un problema por incumplimiento de contrato?
@@ -177,7 +296,7 @@ export default function IncumplimientoContratoConsecuenciasContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script

@@ -2,21 +2,32 @@
 
 import Link from "next/link";
 import styles from "../../Blog.module.css";
+import { motion } from "framer-motion";
 
 export default function AbogadoCobroCarteraBogotaContent() {
   return (
     <>
       {/* ================= BACK ================= */}
-      <div className={styles.backWrapper}>
+      <motion.div
+        className={styles.backWrapper}
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <Link href="/" className={styles.back}>
           <span className={styles.arrow}>←</span>
           Volver al blog
         </Link>
-      </div>
+      </motion.div>
 
       {/* ================= HERO ================= */}
       <main className={styles.container}>
-        <section className={styles.hero}>
+        <motion.section
+          className={styles.hero}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className={styles.badges}>
             <span className={styles.badge}>Finanzas</span>
             <span className={styles.reading}>5 min lectura</span>
@@ -30,10 +41,14 @@ export default function AbogadoCobroCarteraBogotaContent() {
             Descubre en qué casos necesitas un abogado para recuperar deudas en
             Bogotá y cómo hacerlo de forma legal y efectiva.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CONTENIDO ================= */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <p className={styles.text}>
             El cobro de cartera es una de las principales preocupaciones para
             empresas y emprendedores en Bogotá. Cuando un cliente no paga, no
@@ -146,10 +161,15 @@ export default function AbogadoCobroCarteraBogotaContent() {
             Si estás evaluando opciones, es recomendable elegir una firma con
             experiencia en procesos ejecutivos y cobro jurídico.
           </p>
-        </section>
+        </motion.section>
 
         {/* ================= CTA ================= */}
-        <section className={styles.cta}>
+        <motion.section
+          className={styles.cta}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className={styles.ctaContent}>
             <h2 className={styles.ctaTitle}>
               ¿Necesitas ayuda para recuperar una deuda?
@@ -175,7 +195,7 @@ export default function AbogadoCobroCarteraBogotaContent() {
               </a>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* ================= SCHEMA ================= */}
         <script
