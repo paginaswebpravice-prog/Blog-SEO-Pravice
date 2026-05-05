@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import { motion } from "framer-motion";
 
 const articles = [
   {
@@ -238,15 +239,25 @@ export default function Home() {
   return (
     <main className={styles.container}>
       {/* HERO */}
-      <section className={styles.hero}>
+      <motion.section
+        className={styles.hero}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className={styles.title}>Blog legal en Colombia</h1>
         <p className={styles.subtitle}>
           Guías prácticas sobre derecho, empresas y asesoría jurídica.
         </p>
-      </section>
+      </motion.section>
 
       {/* FEATURED */}
-      <section className={styles.featured}>
+      <motion.section
+        className={styles.featured}
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
         <Link href={featured.href} className={styles.featuredLink}>
           <span className={styles.category}>{featured.category}</span>
 
@@ -258,21 +269,32 @@ export default function Home() {
             <span>{featured.readingTime}</span>
           </div>
         </Link>
-      </section>
+      </motion.section>
 
       {/* LISTA COMPLETA */}
       <section className={styles.wrapper}>
         <div className={styles.list}>
           {rest.map((article, index) => (
-            <Link key={index} href={article.href} className={styles.item}>
-              <div className={styles.itemTop}>
-                <span className={styles.category}>{article.category}</span>
-                <span className={styles.reading}>{article.readingTime}</span>
-              </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+              }}
+            >
+              <Link href={article.href} className={styles.item}>
+                <div className={styles.itemTop}>
+                  <span className={styles.category}>{article.category}</span>
+                  <span className={styles.reading}>{article.readingTime}</span>
+                </div>
 
-              <h3 className={styles.itemTitle}>{article.title}</h3>
-              <p className={styles.itemText}>{article.description}</p>
-            </Link>
+                <h3 className={styles.itemTitle}>{article.title}</h3>
+                <p className={styles.itemText}>{article.description}</p>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </section>
