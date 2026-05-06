@@ -195,12 +195,17 @@ export default function ConstitucionEmpresasContent() {
             </p>
 
             <div className={styles.actions}>
-              <a href="https://pravice.co/" className={styles.primary}>
+              <a
+                href="https://marcas-y-patentes.vercel.app/"
+                className={styles.primary}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Ver firma de abogados
               </a>
 
               <a
-                href="https://api.whatsapp.com"
+                href="https://api.whatsapp.com/send/?phone=573114659315&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.secondary}
@@ -230,7 +235,7 @@ export default function ConstitucionEmpresasContent() {
                 name: "PRAVICE Abogados Laboralistas",
               },
               mainEntityOfPage:
-                "https://pravice-abogadoslaboralistas.vercel.app/blog/constitucion-empresas-colombia",
+                "https://guialegalcolombia.vercel.app/blog/constitucion-empresas-colombia",
             }),
           }}
         />
